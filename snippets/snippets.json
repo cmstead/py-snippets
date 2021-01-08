@@ -1,0 +1,186 @@
+{
+    "Create/Assign Variable": {
+		"prefix": "variable-create-assign",
+		"body": [
+			"${1/([A-Z0-9])/_${1:/downcase}/g} = $2"
+		],
+		"description": "Simple variable creation or assignment"
+    },
+	
+	"Formatted String": {
+		"prefix": "formatted-string",
+		"body": [
+			"f\"\""
+		],
+		"description": "Formatted string"
+	},
+
+	"Formatted String - Inserted Variable": {
+		"prefix": "formatted-string-inserted-variable",
+		"body": [
+			"{${1:variable_to_insert}}"
+		],
+		"description": "Variable insertion for formatted strings"
+	},
+
+	"Multiline String": {
+		"prefix": "multiline-string",
+		"body": [
+			"\"\"\"$1\"\"\""
+		],
+		"description": ""
+	},
+
+    "Printing": {
+		"prefix": "print-console",
+		"body": [
+			"print(${1:value_to_print})$0"
+		],
+		"description": "Print to console"
+	},
+
+	"Comparing": {
+		"prefix": "comparing-values",
+		"body": [
+			"$1 ${2|==,!=,<,>,<=,>=|} $3"
+		],
+		"description": "Comparison operators - compare values"
+	},
+
+	"Logical Evaluation": {
+		"prefix": "logical-evaluation-operator",
+		"body": [
+			"${1|and,or,not|}"
+		],
+		"description": "Logical operators for valuating multiple boolean clauses"
+	},
+
+	"List - Simple": {
+		"prefix": "list-creation-simple",
+		"body": [
+			"[$1]$0"
+		],
+		"description": "Simple list creation"
+	},
+
+	"List - Range": {
+		"prefix": "list-creation-range",
+		"body": [
+			"range($1, $2)$0"
+		],
+		"description": "List creation with range"
+	},
+
+	"List - Comprehension": {
+		"prefix": "list-creation-comprehension",
+		"body": [
+			"[${1:output_expression} for ${2:input_variable} in ${3:evaluation_expression}]$0"
+		],
+		"description": "List creation by comprehension"
+	},
+
+	"Subscript From List": {
+		"prefix": "subscript-value-from-list",
+		"body": [
+			"${1:list_variable}[${2:subscript}${3::${4:slice_end_subscript}}]$0"
+		],
+		"description": "Subscript value(s) from list"
+	},
+
+	"For Loop": {
+		"prefix": "for-loop",
+		"body": [
+			"for $1 in $2:",
+			"    ${3:pass}"
+		],
+		"description": "For loop"
+	},
+
+	"While Loop": {
+		"prefix": "while-loop",
+		"body": [
+			"while ${1:conditional_expression}:",
+			"    ${2:pass}"
+		],
+		"description": "While loop"
+	},
+
+	"Import": {
+		"prefix": "import",
+		"body": [
+			"${1:from ${2:package} }import ${3:itemName}"
+		],
+		"description": "Import statement"
+	},
+
+	"Dictionary": {
+		"prefix": "new-dictionary",
+		"body": [
+			"{",
+			"    $1",
+			"}$0"
+		],
+		"description": "Create a new dictionary"
+	},
+
+	"Dictionary Entry": {
+		"prefix": "dictionary-entry",
+		"body": [
+			"\"${3:key}\": ${2:value}"
+		],
+		"description": "Dictionary entry"
+	},
+
+	"Conditional - If/Elif/Else": {
+		"prefix": "conditional-if-elif-else",
+		"body": [
+			"${1|if,elif,else|}${2: conditional_expression}:",
+			"    ${3:pass}"
+		],
+		"description": "Conditional block - if/elif/else"
+	},
+
+	"Class Or Subclass": {
+		"prefix": "class-subclass",
+		"body": [
+			"class ${1/^([a-z])/${1:/upcase}/}${2:(${3:ParentClass})}:",
+			"    ${4:pass}"
+		],
+		"description": "Class with optional parent class definition"
+	},
+
+	"Constructor": {
+		"prefix": "ctor",
+		"body": [
+			"def __init__(self${2:, ${3:parameters}}):",
+			"    ${4:pass}"
+		],
+		"description": "Simple class setup"
+	},
+
+	"Parameter": {
+		"prefix": "parameter",
+		"body": [
+			"${1/([A-Z0-9])/_${1:/downcase}/g}${2: = ${3:default_value}}"
+		],
+		"description": "Function/method parameter"
+	},
+
+	"Method": {
+		"prefix": "method",
+		"body": [
+			"def ${1/([A-Z0-9])/_${1:/downcase}/g}(self, ${2:parameters}):",
+			"    ${3:pass}"
+		],
+		"description": "New method definition"
+	},
+
+	"Function": {
+		"prefix": "function",
+		"body": [
+			"def ${1/([A-Z0-9])/_${1:/downcase}/g}(${2:parameters}):",
+			"    ${3:pass}"
+		],
+		"description": "New function definition"
+	},
+}
