@@ -183,4 +183,12 @@
 		],
 		"description": "New function definition"
 	},
+
+	"Conditional - Ternary": {
+		"prefix": "conditional-ternary",
+		"body": [
+			"${1:success_value} if ${2:condition} else ${3:alternate_value}"
+		],
+		"description": "Conditional - ternary expression"
+	},
 }

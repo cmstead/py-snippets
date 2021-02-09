@@ -38,6 +38,7 @@ PySnippets is an extended set of language-core snippets for Python based on Kate
 
 - Conditionals
     - Conditional - If/Elif/Else
+    - Ternary expression
 
 - Classes
     - Class Or Subclass
