@@ -3,6 +3,14 @@
     "displayName": "PySnippets",
     "description": "Python Snippets for VS Code - built from @galaxykate's cheatsheet",
     "version": "0.1.0",
+    "publisher": "cmstead",
+    "repository": {
+        "url": "https://github.com/cmstead/py-snippets.git",
+        "type": "git"
+    },
+    "author": {
+        "name": "Chris Stead"
+    },
     "engines": {
         "vscode": "^1.52.0"
     },
